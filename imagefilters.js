@@ -1,3 +1,10 @@
+/*
+ * FORK of https://github.com/arahaya/ImageFilters.js ( MIT Licensed https://github.com/franzenzenhofer/ImageFilters.js/blob/master/MIT-LICENSE )
+ * 
+ * this fork is maintained at https://github.com/franzenzenhofer/ImageFilters.js 
+ * MIT License
+ * 
+ */
 var ImageFilters = {};
 ImageFilters.utils = {
     initSampleCanvas: function () {
