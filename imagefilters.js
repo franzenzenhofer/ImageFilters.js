@@ -601,7 +601,7 @@ ImageFilters.GaussianBlur = function (srcImageData, strength) {
         divisor = 16;
         break;
     }
-    return this.ConvolutionFilter(srcImageData, size, size, matrix, divisor, 0, false);
+    return ImageFilters.ConvolutionFilter(srcImageData, size, size, matrix, divisor, 0, false);
 };
 
 /**
@@ -1398,7 +1398,7 @@ ImageFilters.Dither = function (srcImageData, levels) {
 
 ImageFilters.Edge = function (srcImageData) {
     //pretty close to Fireworks 'Find Edges' effect
-    return this.ConvolutionFilter(srcImageData, 3, 3, [
+    return ImageFilters.ConvolutionFilter(srcImageData, 3, 3, [
         -1, -1, -1,
         -1,  8, -1,
         -1, -1, -1
@@ -1406,7 +1406,7 @@ ImageFilters.Edge = function (srcImageData) {
 };
 
 ImageFilters.Emboss = function (srcImageData) {
-    return this.ConvolutionFilter(srcImageData, 3, 3, [
+    return ImageFilters.ConvolutionFilter(srcImageData, 3, 3, [
         -2, -1, 0,
         -1,  1, 1,
          0,  1, 2
@@ -1414,7 +1414,7 @@ ImageFilters.Emboss = function (srcImageData) {
 };
 
 ImageFilters.Enrich = function (srcImageData) {
-    return this.ConvolutionFilter(srcImageData, 3, 3, [
+    return ImageFilters.ConvolutionFilter(srcImageData, 3, 3, [
          0, -2,  0,
         -2, 20, -2,
          0, -2,  0
@@ -1914,7 +1914,7 @@ ImageFilters.Sepia = function (srcImageData) {
  */
 ImageFilters.Sharpen = function (srcImageData, factor) {
     //Convolution formula from VIGRA
-    return this.ConvolutionFilter(srcImageData, 3, 3, [
+    return ImageFilters.ConvolutionFilter(srcImageData, 3, 3, [
         -factor/16,     -factor/8,      -factor/16,
         -factor/8,       factor*0.75+1, -factor/8,
         -factor/16,     -factor/8,      -factor/16
